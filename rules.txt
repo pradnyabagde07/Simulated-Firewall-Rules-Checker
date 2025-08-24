@@ -1,0 +1,20 @@
+# Allow HTTP traffic from local network
+192.168.1.0/24 80 ALLOW TCP
+
+# Deny SSH access for a specific host
+192.168.1.100/32 22 DENY ANY
+
+# Allow UDP traffic for internal network ports 1000-2000
+10.0.0.0/8 1000-2000 ALLOW UDP
+
+# Allow DNS TCP traffic from specific subnet
+172.16.0.0/16 53 ALLOW TCP
+
+# Deny FTP traffic from any host
+* 21 DENY TCP
+
+# Allow all HTTPS traffic
+* 443 ALLOW TCP
+
+# Catch-all deny for everything else
+* 0-65535 DENY ANY
